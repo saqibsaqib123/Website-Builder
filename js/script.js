@@ -1,3 +1,6 @@
+let buttoncreated = 0;
+let active;
+
 function createElement(tag, parent) {
     let element = document.createElement(tag);
     let element_container = document.getElementsByClassName(parent)[0];
@@ -10,43 +13,53 @@ function textnode(text_value, parent) {
     parent.appendChild(text);
 }
 
-function createtextbox() {
-    createElement('input', 'main-content');
-}
-
-function createbutton() {
-    // let button = document.createElement('button');
-    // let button_text = document.createTextNode('Button');
-    // button.appendChild(button_text);
-    // let button_container = document.getElementsByClassName('main-content')[0];
-    // button_container.appendChild(button);
-    let button = createElement('button', 'main-content');
-    textnode('Button', button);
-    button.setAttribute('id', 'btn-1');
-    button.setAttribute('onclick', 'showproperties(id)');
-}
-
-function getproperties(id) {
+function showproperties(id) {
     let width_container = document.getElementById('width');
     let height_container = document.getElementById('height');
     width_container.value = document.getElementById(id).offsetWidth;
     height_container.value = document.getElementById(id).offsetHeight;
+    active = document.getElementById(id);
+    console.log(active);
 }
 
-function showproperties(id) {
-    getproperties(id);
-}
-
-// if (innerWidth <= 650) {
-//     let nav = document.getElementById('top-nav');
-//     let button = document.createElement('button');
-//     button.appendChild(document.createTextNode('Show More'));
-//     nav.appendChild(button);
-//     button.setAttribute('class', 'showitemsbar');
-// } else {
-//     button.setAttribute('class', 'hideitemsbar');
+// function createtextbox() {
+//     createElement('input', 'main-content');
 // }
 
-function valueChanged(id){
-    console.log(id)
+function createbutton() {
+    let button = createElement('button', 'main-content');
+    textnode('Button', button);
+    buttoncreated += 1;
+    button.setAttribute('id', 'btn-' + buttoncreated);
+    button.setAttribute('onclick', 'showproperties(id)');
+    // button.setAttribute('onclick', 'setActive(id)');
 }
+
+function valueChanged(id, property) {
+    let value = document.getElementById(id).value;
+    switch (id) {
+        case 'width':
+            active.style.width = value + 'px';
+            break;
+        case 'height':
+            active.style.height = value + 'px';
+            break;
+        case 'color':
+            active.style.backgroundColor = value;
+            break;
+    }
+}
+
+
+
+
+    //Responsiveness
+    // if (innerWidth <= 650) {
+    //     let nav = document.getElementById('top-nav');
+    //     let button = document.createElement('button');
+    //     button.appendChild(document.createTextNode('Show More'));
+    //     nav.appendChild(button);
+    //     button.setAttribute('class', 'showitemsbar');
+    // } else {
+    //     button.setAttribute('class', 'hideitemsbar');
+    // }
