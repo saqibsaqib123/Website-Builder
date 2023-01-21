@@ -1,6 +1,10 @@
 let buttoncreated = 0;
 let active;
+let ismoving = false;
+let xPos;
+let yPos;
 
+//Make an Element with
 function createElement(tag, parent) {
     let element = document.createElement(tag);
     let element_container = document.getElementsByClassName(parent)[0];
@@ -8,11 +12,33 @@ function createElement(tag, parent) {
     return element;
 }
 
+//Set an text to the element
 function textnode(text_value, parent) {
     let text = document.createTextNode(text_value);
     parent.appendChild(text);
 }
 
+//TO move the Element Around
+document.addEventListener('mousedown', () => {
+    document.onmousemove = (event) => {
+        xPos = event.clientX;
+        yPos = event.clientY;
+        move();
+    }
+});
+document.addEventListener('mouseup', () => {
+    document.onmousemove = null;
+});
+function move() {
+    active.style.position = 'absolute'
+    active.style.top = yPos + 'px';
+    active.style.left = xPos + 'px';
+
+    console.log("Coordinate (X) : " + xPos + " " + "px Coordinate (Y) : " + yPos + " " + "px");
+
+}
+
+//When an element is created or clicked it is run
 function showproperties(id) {
     let width_container = document.getElementById('width');
     let height_container = document.getElementById('height');
