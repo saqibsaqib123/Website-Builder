@@ -30,9 +30,10 @@ function createbutton() {
     let button = createElement('button', 'main-content');
     textnode('Button', button);
     buttoncreated += 1;
-    button.setAttribute('id', 'btn-' + buttoncreated);
+    let id = 'btn-' + buttoncreated;
+    button.setAttribute('id', id);
     button.setAttribute('onclick', 'showproperties(id)');
-    // button.setAttribute('onclick', 'setActive(id)');
+    showproperties(id);
 }
 
 function valueChanged(id, property) {
