@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Builder</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="top-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Setting</a></li>
+                <li><a href="#">View Code</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <nav class="buttons-container">
+            <button>New Page</button>
+            <button>Image</button>
+            <button onclick="createtextbox()">Text</button>
+            <button>Container</button>
+            <button onclick="createbutton()">Button</button>
+        </nav>
+        <div class="main-content">
+
+        </div>
+        <nav class="properties">
+            <h3>Properties</h3>
+            <p>width: <input type="number" onchange="valueChanged(id)" id="width"></input></p>
+            <p>height: <input type="number" onchange="valueChanged(id)"  id="height"></input></p>
+            <p>Border: <input type="number" onchange="valueChanged(id)"  id="border"></input></p>
+            <p>Bor-rad: <input type="number" onchange="valueChanged(id)"  id="border-radius"></input></p>
+            <p>Color: <input type="color" onchange="valueChanged(id)"  id="color"></input></p>
+            <p>Margin: <input type="number" onchange="valueChanged(id)"  id="margin"></input></p>
+            <p>Padding: <input type="number" onchange="valueChanged(id)"  id="padding"></input></p>
+        </nav>
+    </main>
+    <footer></footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
