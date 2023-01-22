@@ -62,12 +62,14 @@ function showproperties(id) {
     let height_container = document.getElementById('height');
     let color_container = document.getElementById('color');
     let bord_container = document.getElementById('bord');
+    let bord_thick_container = document.getElementById('bord-thick');
     x_container.value = active.offsetLeft;
     y_container.value = active.offsetTop;
     width_container.value = active.offsetWidth;
     height_container.value = active.offsetHeight;
     color_container.value = "#EFEFEF";
-    bord_container.checked = true;
+    bord_thick_container.value = (active.style.borderWidth.replace('px', ''));
+
 }
 
 // function createtextbox() {
@@ -79,6 +81,7 @@ function createbutton() {
     textnode('Button', button);
     buttoncreated += 1;
     let id = 'btn-' + buttoncreated;
+    button.setAttribute('class', 'default');
     button.setAttribute('id', id);
     button.setAttribute('onclick', 'showproperties(id)');
     showproperties(id);
@@ -90,18 +93,23 @@ function valueChanged(id, property) {
         case 'x':
             active.style.left = value + 'px';
             break;
+
         case 'y':
             active.style.top = value + 'px';
             break;
+
         case 'width':
             active.style.width = value + 'px';
             break;
+
         case 'height':
             active.style.height = value + 'px';
             break;
+
         case 'color':
             active.style.backgroundColor = value;
             break;
+
         case 'bord':
             if (document.getElementById(id).checked) {
                 active.style.border = '2px solid black'
