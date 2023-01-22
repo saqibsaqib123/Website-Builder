@@ -132,3 +132,20 @@ footer{
     justify-content: space-around;
     align-items: center;
 }
+
+.other-logos a {
+    margin: 0px 6px;
+}
+
+.other-logos a img {
+    width: 1.5em;
+    border-radius: 50%;
+    transition: all 0.5s;
+    background: rgba(0, 0, 0, 0.447);
+}
+
+.other-logos a img:hover {
+    background: rgba(0, 0, 0, 0.63);
+    transform: translateY(-7px);
+
+}
