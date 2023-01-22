@@ -38,8 +38,9 @@ function move() {
     if (parseFloat(active.style.left.replace('px', "")) <= 168.0) {
         active.style.left = 163 + 'px';
     }
-    if (parseFloat(active.style.left.replace('px', "")) >= 1051.0) {
-        active.style.left = 1055 + 'px';
+    console.log(((parseFloat(active.offsetWidth)) / 2))
+    if (parseFloat(active.style.left.replace('px', "")) >= (1095 - (parseFloat(active.offsetWidth)))) {
+        active.style.left = 1100 - ((parseFloat(active.offsetWidth))) + 'px';
     }
 
     document.getElementById('x').value = active.style.left.replace('px', "");
