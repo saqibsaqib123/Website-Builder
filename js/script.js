@@ -35,7 +35,10 @@ function move() {
     active.style.top = (yPos - ((parseFloat(active.offsetHeight)) / 2)) + 'px';
     active.style.left = (xPos - ((parseFloat(active.offsetWidth)) / 2)) + 'px';
 
-    if (parseFloat(active.style.left.replace('px', "")) <= 168.0) {
+    if (parseFloat(active.style.top.replace('px', "")) <= 70) {
+        active.style.top = 65 + 'px';
+    }
+    if (parseFloat(active.style.left.replace('px', "")) <= 168) {
         active.style.left = 163 + 'px';
     }
     if (parseFloat(active.style.left.replace('px', "")) >= (1095 - (parseFloat(active.offsetWidth)))) {
