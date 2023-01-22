@@ -12,7 +12,7 @@ function createElement(tag, parent) {
     return element;
 }
 
-//Set an text to the element
+//Set an text to the created element
 function textnode(text_value, parent) {
     let text = document.createTextNode(text_value);
     parent.appendChild(text);
