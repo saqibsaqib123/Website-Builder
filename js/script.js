@@ -106,13 +106,13 @@ function valueChanged(id, property) {
 
 
 
-    //Responsiveness
-    // if (innerWidth <= 650) {
-    //     let nav = document.getElementById('top-nav');
-    //     let button = document.createElement('button');
-    //     button.appendChild(document.createTextNode('Show More'));
-    //     nav.appendChild(button);
-    //     button.setAttribute('class', 'showitemsbar');
-    // } else {
-    //     button.setAttribute('class', 'hideitemsbar');
-    // }
+//Responsiveness
+// if (innerWidth <= 650) {
+//     let nav = document.getElementById('top-nav');
+//     let button = document.createElement('button');
+//     button.appendChild(document.createTextNode('Show More'));
+//     nav.appendChild(button);
+//     button.setAttribute('class', 'showitemsbar');
+// } else {
+//     button.setAttribute('class', 'hideitemsbar');
+// }
