@@ -14,47 +14,64 @@
     <header>
         <nav>
             <ul id="top-nav">
+                <li><a href="#">Items in your Page</a></li>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Setting</a></li>
                 <li><a href="#">View Code</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#">Color</a></li>
                 <li><a href="#">Contact</a></li>
+                <li><a href="#">More</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <nav class="buttons-container">
-            <h3>New Elements</h3>
-            <button>New Page</button>
-            <button>Image</button>
-            <button onclick="createtextbox()">Text</button>
-            <button>Container</button>
-            <button onclick="createbutton()">Button</button>
+            <p class="heading">New Elements</p>
+            <div class="buttons">
+                <button>New Page</button>
+                <button onclick="createtext()">Text</button>
+                <button onclick="createbutton()">Button</button>
+                <button onclick="createcontainer()">Container</button>
+                <button onclick="createtextbox()">Text Field</button>
+                <button onclick="createimage()">Image</button>
+            </div>
         </nav>
-        <div class="main-content">
-
-        </div>
+        <div class="main-content"></div>
         <nav class="properties">
-            <h3>Properties</h3>
-            <p>X : <input type="number" id="x" onchange="valueChanged(id)"></input><span> px</span></p>
-            <p>Y : <input type="number" id="y" onchange="valueChanged(id)"></input><span> px</span></p>
-            <p>width : <input type="number" id="width" onchange="valueChanged(id)"></input><span> px</span></p>
-            <p>height : <input type="number" id="height" onchange="valueChanged(id)"></input><span> px</span></p>
-            <p>Color : <input type="color" id="color" onchange="valueChanged(id)"></input></p>
-            <p>Border : <input type="checkbox" id="bord" onchange="valueChanged(id)"></input></p>
-            <p style="display: none;">Border Thickness : <input type="number" id="bord-thick"
-                    onchange="valueChanged(id)"></input><span>
-                    px</span>
-            </p>
-            <p style="display: none;">Border color : <input type="color" id="bord-color"
-                    onchange="valueChanged(id)"></input></p>
-            <!-- <p>Bor-rad: <input type="number" id="border-radius" onchange="valueChanged(id)" ></input></p> -->
+            <p class="heading">Properties</p>
+            <div class="inputs">
+                <p>X : <input type="number" id="x" onchange="valueChanged(id)"></input><span> px</span></p>
+                <p>Y : <input type="number" id="y" onchange="valueChanged(id)"></input><span> px</span></p>
+                <p>Width : <input type="number" id="width" onchange="valueChanged(id)"></input><span> px</span></p>
+                <p>Height : <input type="number" id="height" onchange="valueChanged(id)"></input><span> px</span></p>
+                <p>Color : <input type="color" id="color" onchange="valueChanged(id)"></input></p>
+                <p>Border : <input style="width: 15px; height: 15px;" type="checkbox" id="bord"
+                        onchange="valueChanged(id)"></input>
+                </p>
+                <p style="display: none;">Border Thickness : <input type="number" id="bord-thick"
+                        onchange="valueChanged(id)"></input><span>
+                        px</span>
+                </p>
+                <p style="display: none;">Border color : <input type="color" id="bord-color"
+                        onchange="valueChanged(id)"></input></p>
+            </div>
         </nav>
     </main>
-    <footer></footer>
+    <footer>
+        <span>Copyright &copy; MSN Studio All Rights Reserved</span>
+        <div class="other-logos">
+            <h6>Share it among Your Friend</h6>
+            <a href="https://www.fiverr.com/touseefahmad810" target="_blank" rel="noopener noreferrer"><img
+                    src="img/icons/fiverr-logo.png" alt=""></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><img
+                    src="img/icons/youtube-logo.png" alt=""></a>
+            <a id="facebook-logo" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img
+                    src="img/icons/facebook-logo.png" alt=""></a>
+            <a href="https://twitter.com/home" target="_blank" rel="noopener noreferrer"><img
+                    src="img/icons/twitter-logo.png" alt=""></a>
+        </div>
+    </footer>
     <script src="js/script.js"></script>
 </body>
 

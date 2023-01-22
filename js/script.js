@@ -1,4 +1,5 @@
 let buttoncreated = 0;
+let textcreated = 0;
 let active;
 let ismoving = false;
 let xPos;
@@ -32,15 +33,21 @@ document.addEventListener('mouseup', () => {
 function move() {
     active.style.position = 'absolute';
 
-    active.style.top = (yPos - ((parseFloat(active.offsetHeight)) / 2)) + 'px';
+    active.style.top = ((yPos - ((parseFloat(active.offsetHeight)) / 2)) + window.scrollY) + 'px';
     active.style.left = (xPos - ((parseFloat(active.offsetWidth)) / 2)) + 'px';
-
+    //Top Contraint
     if (parseFloat(active.style.top.replace('px', "")) <= (0.43 * (innerHeight / 2.3))) {
         active.style.top = (0.4 * (innerHeight / 2.3)) + 'px';
     }
+    //Bottom Contraint
+    if (parseFloat(active.style.top.replace('px', "")) >= (2.57 * (innerHeight / 2.3))) {
+        active.style.top = (2.59 * (innerHeight / 2.3)) + 'px';
+    }
+    //left Contraint
     if (parseFloat(active.style.left.replace('px', "")) <= 168) {
         active.style.left = 163 + 'px';
     }
+    //Right Contraint
     if (parseFloat(active.style.left.replace('px', "")) >= (1095 - (parseFloat(active.offsetWidth)))) {
         active.style.left = 1100 - ((parseFloat(active.offsetWidth))) + 'px';
     }
@@ -74,9 +81,16 @@ function showproperties(id) {
 
 }
 
-// function createtextbox() {
-//     createElement('input', 'main-content');
-// }
+function createtextbox() {
+    let text = createElement('input', 'main-content');
+    // textnode('Button', button);
+    textcreated += 1;
+    let id = 'text-' + textcreated;
+    text.setAttribute('class', 'default');
+    text.setAttribute('id', id);
+    text.setAttribute('onclick', 'showproperties(id)');
+    showproperties(id);
+}
 
 function createbutton() {
     let button = createElement('button', 'main-content');
