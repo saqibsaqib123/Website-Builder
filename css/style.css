@@ -61,6 +61,7 @@ main {
     padding-top: 12px;
     font-size: 21px;
     font-weight: 600;
+    text-align: center;
 }
 
 .buttons {
@@ -114,7 +115,8 @@ main {
 }
 
 .inputs p input {
-    width: 55px;
+    width: calc(8vw/1.1);
+    min-width: 28px;
     background: #2e545b69;
     border: none;
     color: #f0f0f0;

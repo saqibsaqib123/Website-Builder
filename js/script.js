@@ -151,15 +151,27 @@ function valueChanged(id, property) {
 }
 
 
-
-
 //Responsiveness
-// if (innerWidth <= 650) {
-//     let nav = document.getElementById('top-nav');
-//     let button = document.createElement('button');
-//     button.appendChild(document.createTextNode('Show More'));
-//     nav.appendChild(button);
-//     button.setAttribute('class', 'showitemsbar');
-// } else {
-//     button.setAttribute('class', 'hideitemsbar');
+if (innerWidth <= 660) {
+    console.log('hellow')
+    let nav = document.getElementById('top-nav');
+    let button = document.createElement('button');
+    button.appendChild(document.createTextNode('Show More'));
+    nav.prepend(button);
+    button.setAttribute('id', 'showitemsbar');
+    button.setAttribute('onclick', 'showitemsbar()');
+}
+//  else {
+//     document.getElementById('showitemsbar').remove();
 // }
+
+let show = true;
+function showitemsbar() {
+    if (show) {
+        document.getElementsByClassName('buttons-container')[0].style.width = 37 + '%';
+        show = false
+    } else {
+        document.getElementsByClassName('buttons-container')[0].style.width = 0 + '%';
+        show = true
+    }
+}
