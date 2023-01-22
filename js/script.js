@@ -38,7 +38,6 @@ function move() {
     if (parseFloat(active.style.left.replace('px', "")) <= 168.0) {
         active.style.left = 163 + 'px';
     }
-    console.log(((parseFloat(active.offsetWidth)) / 2))
     if (parseFloat(active.style.left.replace('px', "")) >= (1095 - (parseFloat(active.offsetWidth)))) {
         active.style.left = 1100 - ((parseFloat(active.offsetWidth))) + 'px';
     }
@@ -52,16 +51,18 @@ function move() {
 
 //When an element is created or clicked it is run
 function showproperties(id) {
+    active = document.getElementById(id);
+    console.log(active);
     let x_container = document.getElementById('x');
     let y_container = document.getElementById('y');
     let width_container = document.getElementById('width');
     let height_container = document.getElementById('height');
-    x_container.value = document.getElementById(id).offsetLeft;
-    y_container.value = document.getElementById(id).offsetTop;
-    width_container.value = document.getElementById(id).offsetWidth;
-    height_container.value = document.getElementById(id).offsetHeight;
-    active = document.getElementById(id);
-    console.log(active);
+    let color_container = document.getElementById('color');
+    x_container.value = active.offsetLeft;
+    y_container.value = active.offsetTop;
+    width_container.value = active.offsetWidth;
+    height_container.value = active.offsetHeight;
+    color_container.value = "#EFEFEF";
 }
 
 // function createtextbox() {
