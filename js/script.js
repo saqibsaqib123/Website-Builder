@@ -30,11 +30,18 @@ document.addEventListener('mouseup', () => {
     document.onmousemove = null;
 });
 function move() {
-    active.style.position = 'absolute'
-    active.style.top = yPos + 'px';
-    active.style.left = xPos + 'px';
+    active.style.position = 'absolute';
 
-    console.log("Coordinate (X) : " + xPos + " " + "px Coordinate (Y) : " + yPos + " " + "px");
+    active.style.top = (yPos - ((parseInt(active.offsetHeight)) / 2)) + 'px';
+    active.style.left = (xPos - ((parseInt(active.offsetWidth)) / 2)) + 'px';
+    if (parseInt(active.style.left.replace(/\D/g, "")) <= 1680) {
+        active.style.left = 163 + 'px';
+    }
+    if (parseInt(active.style.left.replace(/\D/g, "")) >= 10510) {
+        active.style.left = 1055 + 'px';
+    }
+
+    // console.log("Coordinate (X) : " + xPos + " " + "px Coordinate (Y) : " + yPos + " " + "px");
 
 }
 
