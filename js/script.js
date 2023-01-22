@@ -32,14 +32,18 @@ document.addEventListener('mouseup', () => {
 function move() {
     active.style.position = 'absolute';
 
-    active.style.top = (yPos - ((parseInt(active.offsetHeight)) / 2)) + 'px';
-    active.style.left = (xPos - ((parseInt(active.offsetWidth)) / 2)) + 'px';
-    if (parseInt(active.style.left.replace(/\D/g, "")) <= 1680) {
+    active.style.top = (yPos - ((parseFloat(active.offsetHeight)) / 2)) + 'px';
+    active.style.left = (xPos - ((parseFloat(active.offsetWidth)) / 2)) + 'px';
+
+    if (parseFloat(active.style.left.replace('px', "")) <= 168.0) {
         active.style.left = 163 + 'px';
     }
-    if (parseInt(active.style.left.replace(/\D/g, "")) >= 10510) {
+    if (parseFloat(active.style.left.replace('px', "")) >= 1051.0) {
         active.style.left = 1055 + 'px';
     }
+
+    document.getElementById('x').value = active.style.left.replace('px', "");
+    document.getElementById('y').value = active.style.top.replace('px', "");
 
     // console.log("Coordinate (X) : " + xPos + " " + "px Coordinate (Y) : " + yPos + " " + "px");
 
@@ -47,8 +51,12 @@ function move() {
 
 //When an element is created or clicked it is run
 function showproperties(id) {
+    let x_container = document.getElementById('x');
+    let y_container = document.getElementById('y');
     let width_container = document.getElementById('width');
     let height_container = document.getElementById('height');
+    x_container.value = document.getElementById(id).offsetLeft;
+    y_container.value = document.getElementById(id).offsetTop;
     width_container.value = document.getElementById(id).offsetWidth;
     height_container.value = document.getElementById(id).offsetHeight;
     active = document.getElementById(id);
@@ -72,6 +80,12 @@ function createbutton() {
 function valueChanged(id, property) {
     let value = document.getElementById(id).value;
     switch (id) {
+        case 'x':
+            active.style.left = value + 'px';
+            break;
+        case 'y':
+            active.style.top = value + 'px';
+            break;
         case 'width':
             active.style.width = value + 'px';
             break;

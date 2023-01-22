@@ -5,6 +5,7 @@
 
 body {
     background: #ffffff;
+    user-select: none;
 }
 
 header {
