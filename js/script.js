@@ -61,11 +61,13 @@ function showproperties(id) {
     let width_container = document.getElementById('width');
     let height_container = document.getElementById('height');
     let color_container = document.getElementById('color');
+    let bord_container = document.getElementById('bord');
     x_container.value = active.offsetLeft;
     y_container.value = active.offsetTop;
     width_container.value = active.offsetWidth;
     height_container.value = active.offsetHeight;
     color_container.value = "#EFEFEF";
+    bord_container.checked = true;
 }
 
 // function createtextbox() {
@@ -99,6 +101,17 @@ function valueChanged(id, property) {
             break;
         case 'color':
             active.style.backgroundColor = value;
+            break;
+        case 'bord':
+            if (document.getElementById(id).checked) {
+                active.style.border = '2px solid black'
+                document.getElementById('bord-thick').parentElement.style.display = 'block';
+                document.getElementById('bord-color').parentElement.style.display = 'block';
+            } else {
+                active.style.border = 'none'
+                document.getElementById('bord-thick').parentElement.style.display = 'none';
+                document.getElementById('bord-color').parentElement.style.display = 'none';
+            }
             break;
     }
 }
