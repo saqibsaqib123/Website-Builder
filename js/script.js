@@ -35,8 +35,8 @@ function move() {
     active.style.top = (yPos - ((parseFloat(active.offsetHeight)) / 2)) + 'px';
     active.style.left = (xPos - ((parseFloat(active.offsetWidth)) / 2)) + 'px';
 
-    if (parseFloat(active.style.top.replace('px', "")) <= 70) {
-        active.style.top = 65 + 'px';
+    if (parseFloat(active.style.top.replace('px', "")) <= (0.43 * (innerHeight / 2.3))) {
+        active.style.top = (0.4 * (innerHeight / 2.3)) + 'px';
     }
     if (parseFloat(active.style.left.replace('px', "")) <= 168) {
         active.style.left = 163 + 'px';
@@ -63,12 +63,14 @@ function showproperties(id) {
     let color_container = document.getElementById('color');
     let bord_container = document.getElementById('bord');
     let bord_thick_container = document.getElementById('bord-thick');
+    let bord_color_container = document.getElementById('bord-color');
     x_container.value = active.offsetLeft;
     y_container.value = active.offsetTop;
     width_container.value = active.offsetWidth;
     height_container.value = active.offsetHeight;
     color_container.value = "#EFEFEF";
     bord_thick_container.value = (active.style.borderWidth.replace('px', ''));
+    color_container.value = "#000000";
 
 }
 
@@ -115,11 +117,21 @@ function valueChanged(id, property) {
                 active.style.border = '2px solid black'
                 document.getElementById('bord-thick').parentElement.style.display = 'block';
                 document.getElementById('bord-color').parentElement.style.display = 'block';
+                document.getElementById('bord-thick').value = 2;
+                document.getElementById('bord-color').value = "#000000";
             } else {
                 active.style.border = 'none'
                 document.getElementById('bord-thick').parentElement.style.display = 'none';
                 document.getElementById('bord-color').parentElement.style.display = 'none';
             }
+            break;
+
+        case 'bord-thick':
+            active.style.borderWidth = value + 'px';
+            break;
+
+        case 'bord-color':
+            active.style.borderColor = value;
             break;
     }
 }
